@@ -1,0 +1,35 @@
+---
+name: uiuxpromax
+description: >-
+  UI/UX Pro Max design intelligence for web, mobile, and responsive interfaces.
+  Use when designing, building, styling, or reviewing UI components, layouts, design systems,
+  color palettes, typography, accessibility (a11y), animations, and stack-specific frontends
+  (Next.js, React, Tailwind CSS, shadcn/ui).
+---
+
+# UI/UX Pro Max - Design Intelligence
+
+Provides structured design principles, visual hierarchy guidelines, and UX heuristics to build premium, production-ready interfaces.
+
+## Priority Checklist
+
+| Priority | Category | Key Standards | Anti-Patterns to Avoid |
+| :--- | :--- | :--- | :--- |
+| **1. Accessibility** | Critical | Contrast ≥ 4.5:1, visible focus rings, explicit `aria-label` on icon buttons, keyboard navigable | Removing focus outlines, icon-only buttons without labels |
+| **2. Touch & Sizing** | Critical | Minimum tap target 44×44px, ≥8px spacing between interactive targets | Relying solely on mouse hover, instant 0ms state changes |
+| **3. Visual Hierarchy** | High | Clear typography scale (H1 → H4), consistent baseline rhythm, intentional white space | Cluttered layouts, gray-on-gray unreadable text |
+| **4. Color & Theme** | High | Curated harmonious palettes, semantic tokens (`primary`, `muted`, `accent`, `destructive`), dark mode contrast | Generic harsh primaries (#ff0000), raw hardcoded hex codes |
+| **5. Layout & Responsive** | High | Mobile-first breakpoints, fluid flex/grid, zero unintentional horizontal scrolling | Fixed px container widths, breaking mobile viewport |
+| **6. Micro-Interactions** | Medium | Smooth transitions (150–250ms cubic-bezier), clear active/hover/focus states | Animating expensive properties (width/height), jarring delays |
+| **7. Forms & Validation** | Medium | Visible persistent labels, inline field error states, instant feedback | Placeholder-only inputs, hiding error details at page top |
+
+## Implementation Rules (Next.js & Tailwind CSS)
+
+1. **Semantic Color Tokens**:
+   - Use CSS variables / semantic theme tokens (`bg-background`, `text-foreground`, `border-border`, `text-muted-foreground`).
+2. **Typography Scale**:
+   - Base text `text-base` (16px) with `leading-relaxed` (1.5–1.625) for body copy.
+   - Headings using `tracking-tight` and distinct weights (`font-semibold` / `font-bold`).
+3. **Interactive Components**:
+   - All interactive elements must have defined `:hover`, `:focus-visible`, and `:active` styles.
+   - Ensure proper loading skeletons or disabled states for pending actions.
