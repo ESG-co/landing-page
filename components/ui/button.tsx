@@ -21,14 +21,14 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        xs: "h-6 gap-1 rounded-none px-2 text-xs has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 rounded-none px-2.5 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        icon: "size-8",
-        "icon-xs": "size-6 rounded-none [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-7 rounded-none",
-        "icon-lg": "size-9",
+          "h-10 sm:h-11 md:h-12 gap-2 px-3.5 sm:px-4 md:px-4.5 text-xs sm:text-sm",
+        xs: "h-6 gap-1 px-2 text-xs [&_svg:not([class*='size-'])]:size-3",
+        sm: "h-8 sm:h-9 gap-1.5 px-2.5 sm:px-3 text-xs [&_svg:not([class*='size-'])]:size-3.5",
+        lg: "h-11 sm:h-12 md:h-13 gap-2 px-4 sm:px-5 md:px-6 text-sm sm:text-base",
+        icon: "size-10 sm:size-11 md:size-12",
+        "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-3",
+        "icon-sm": "size-8 sm:size-9",
+        "icon-lg": "size-12 md:size-13",
       },
     },
     defaultVariants: {
@@ -47,6 +47,7 @@ function Button({
   variant = "default",
   size = "default",
   rightIcon,
+  children,
   ...props
 }: ButtonPrimitive.Props &
   VariantProps<typeof buttonVariants> &
@@ -55,12 +56,12 @@ function Button({
     <ButtonPrimitive
       data-slot="button"
       className={cn(
-        "flex items-center gap-2! px-4.5! h-12! group cursor-pointer",
+        "cursor-pointer group",
         buttonVariants({ variant, size, className }),
       )}
       {...props}
     >
-      <span className="uppercase text-sm">{props.children}</span>
+      <span className="uppercase">{children}</span>
       {rightIcon}
     </ButtonPrimitive>
   );

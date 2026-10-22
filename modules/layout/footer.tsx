@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function FooterSection() {
   return (
     <footer className="w-full bg-secondary mt-auto border-t">
-      <div className="flex flex-col gap-8 w-full max-w-360 mx-auto py-16 px-8">
-        <div className="flex gap-24">
-          <div className="flex flex-col gap-6 max-w-110">
+      <div className="flex flex-col gap-4 sm:gap-8 lg:gap-12 w-full max-w-360 mx-auto py-10 sm:py-10 lg:py-16 px-4 sm:px-6 md:px-8">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-24 justify-between">
+          <div className="flex flex-col gap-5 sm:gap-6 w-full lg:max-w-110">
             <Link href="/" passHref>
               <div className="flex items-center max-h-8 overflow-hidden w-56">
                 <Image
@@ -20,22 +20,22 @@ export default function FooterSection() {
               </div>
             </Link>
 
-            <p className="font-medium text-sm opacity-70">
+            <p className="font-medium text-sm opacity-70 max-w-lg">
               High-velocity engineering & digital product architecture. Building
               resilient systems for world-class enterprises.
             </p>
 
-            <div className="flex items-center gap-3">
-              <Compass className="size-4.5 text-primary" />
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <Compass className="size-4.5 text-primary shrink-0" />
 
-              <p className="font-mono text-[13px] opacity-70">
+              <p className="font-mono text-xs sm:text-[13px] opacity-70">
                 6.2088° S, 106.8456° E — JKT / ID
               </p>
             </div>
           </div>
 
-          <div className="flex gap-48 ml-auto">
-            <div className="flex flex-col gap-5">
+          <div className="grid grid-cols-2 gap-8 sm:flex sm:gap-16 md:gap-24 lg:gap-32 lg:ml-auto">
+            <div className="flex flex-col gap-4 sm:gap-5">
               <p className="font-mono font-semibold uppercase text-xs tracking-[1px] opacity-40">
                 Services
               </p>
@@ -50,7 +50,7 @@ export default function FooterSection() {
                   <Link
                     key={key}
                     href={`/services#${item.toLowerCase().split(" ").join("-")}`}
-                    className="text-sm font-medium w-fit opacity-70 hover:opacity-100 duration-200"
+                    className="text-xs sm:text-sm font-medium w-fit opacity-70 hover:opacity-100 duration-200"
                   >
                     {item}
                   </Link>
@@ -58,7 +58,7 @@ export default function FooterSection() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-4 sm:gap-5">
               <p className="font-mono font-semibold uppercase text-xs tracking-[1px] opacity-40">
                 Contact
               </p>
@@ -66,13 +66,13 @@ export default function FooterSection() {
               <div className="flex flex-col gap-2.5">
                 <Link
                   href="mailto:Hello.esgco@gmail.com"
-                  className="text-sm font-medium w-fit opacity-70 hover:opacity-100 duration-200"
+                  className="text-xs sm:text-sm font-medium w-fit opacity-70 hover:opacity-100 duration-200 break-all sm:break-normal"
                 >
                   Hello.esgco@gmail.com
                 </Link>
                 <Link
                   href="https://wa.me/+6283873057719"
-                  className="text-sm font-medium w-fit opacity-70 hover:opacity-100 duration-200"
+                  className="text-xs sm:text-sm font-medium w-fit opacity-70 hover:opacity-100 duration-200"
                   target="_blank"
                 >
                   +62 838-7305-7719
@@ -82,18 +82,24 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <hr />
+        <hr className="border-border" />
 
-        <div className="flex items-center justify-between">
-          <p className="text-sm font-medium opacity-70">
+        <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-4 text-xs sm:text-sm">
+          <p className="font-medium opacity-70">
             Copyright © ESG.co 2026. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-8 text-sm">
-            <Link href="#" className="font-medium opacity-70">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-8">
+            <Link
+              href="#"
+              className="font-medium opacity-70 hover:opacity-100 transition-opacity"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="font-medium opacity-70">
+            <Link
+              href="#"
+              className="font-medium opacity-70 hover:opacity-100 transition-opacity"
+            >
               Terms & Services
             </Link>
 
