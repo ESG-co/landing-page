@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Open_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import LayoutSection from "@/modules/layout/view";
 
 const spaceGrotesk = Space_Grotesk({
   display: "swap",
@@ -31,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${spaceGrotesk.variable} ${openSans.variable} ${jetBrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <LayoutSection>{children}</LayoutSection>
     </html>
   );
 }
